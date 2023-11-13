@@ -12,7 +12,7 @@ class HistoryTab extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Center(
@@ -103,7 +103,7 @@ class HistoryTab extends StatelessWidget {
                   lineColor: Colors.black,
                   stepColor: Colors.white,
                   lineLength: 70,
-                  icons: [
+                  icons: const [
                     Icon(Icons.access_time),
                     Icon(Icons.access_time),
                     Icon(Icons.access_time),
@@ -159,10 +159,10 @@ class HistoryTab extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    TextWidget(
+                    const TextWidget(
                         text: '10/06/2023 01:15PM',
                         fontSize: 16,
                         color: Colors.grey),
@@ -198,27 +198,27 @@ class HistoryTab extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
-                    TextWidget(
+                    const TextWidget(
                         text: '10/06/2023 01:15PM',
                         fontSize: 16,
                         color: Colors.grey),
-                    TextWidget(
+                    const TextWidget(
                         text: 'Assign Appu', fontSize: 16, color: Colors.green),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    TextWidget(
+                    const TextWidget(
                         text: '10/06/2023 01:15PM',
                         fontSize: 16,
                         color: Colors.grey),
-                    TextWidget(
+                    const TextWidget(
                         text: 'Ticket Created',
                         fontSize: 16,
                         color: Colors.green),
-                    TextWidget(
+                    const TextWidget(
                         text: 'Ticket Created by Biju',
                         fontSize: 16,
                         color: Colors.grey),

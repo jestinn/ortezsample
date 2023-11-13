@@ -3,17 +3,24 @@ import 'package:ortezsample/widget/historypage.dart';
 import 'package:ortezsample/widget/text_widget.dart';
 import 'package:ortezsample/widget/ticket_details.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          leading: Icon(Icons.arrow_back, color: Colors.white),
+          // toolbarHeight: 110,
           bottom: TabBar(
-            labelPadding: EdgeInsets.only(
+            labelPadding: const EdgeInsets.only(
               right: 20,
             ),
             isScrollable: true,
@@ -30,7 +37,7 @@ class HomeScreen extends StatelessWidget {
           ),
           backgroundColor: Colors.teal,
         ),
-        body: TabBarView(children: [TicketDetails(), HistoryTab()]),
+        body: const TabBarView(children: [TicketDetails(), HistoryTab()]),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
           type: BottomNavigationBarType.fixed,

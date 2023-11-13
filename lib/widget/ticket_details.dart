@@ -10,7 +10,7 @@ class TicketDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Center(
@@ -168,7 +168,7 @@ class TicketDetails extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 5,
         ),
         Divider(
@@ -202,7 +202,7 @@ class TicketDetails extends StatelessWidget {
             )
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         const Row(children: [
@@ -262,7 +262,7 @@ class TicketDetails extends StatelessWidget {
                 color: Colors.black),
           ),
         ]),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Expanded(
@@ -293,7 +293,7 @@ class TicketDetails extends StatelessWidget {
                             ),
                             fit: BoxFit.cover)),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 5,
                   ),
                   Container(
