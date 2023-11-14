@@ -4,11 +4,13 @@ import 'package:ortezsample/widget/text_widget.dart';
 import 'package:ortezsample/widget/ticket_details.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
+bool isTaped = false;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
@@ -17,13 +19,28 @@ class _HomeScreenState extends State<HomeScreen> {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          leading: Icon(Icons.arrow_back, color: Colors.white),
-          // toolbarHeight: 110,
-          bottom: TabBar(
+          // leading: Icon(Icons.arrow_back, color: Colors.white),
+          toolbarHeight: MediaQuery.of(context).size.height / 8,
+
+          title: TabBar(
+            onTap: (value) {
+              print('value');
+              print(value);
+              setState(() {
+                if (value != 1) {
+                  isTaped = true;
+                } else {
+                  isTaped = false;
+                }
+              });
+            },
+            padding: EdgeInsets.only(top: 50),
+            // tabAlignment: TabAlignment.start,
             labelPadding: const EdgeInsets.only(
               right: 20,
             ),
             isScrollable: true,
+
             unselectedLabelColor: Colors.white.withOpacity(.5),
             labelColor: Colors.white,
             tabs: const [
@@ -35,9 +52,27 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-          backgroundColor: Colors.teal,
+          backgroundColor: Color(0xff001F3F).withOpacity(.8),
+          actions: [
+            isTaped
+                ? Padding(
+                    padding: const EdgeInsets.only(top: 35, right: 20),
+                    child: Row(
+                      children: [
+                        Icon(Icons.delete, size: 35, color: Colors.red),
+                        Icon(Icons.edit_calendar_outlined,
+                            size: 35, color: Colors.green),
+                        Icon(Icons.telegram_outlined,
+                            size: 35, color: Colors.green),
+                      ],
+                    ),
+                  )
+                : SizedBox.shrink()
+          ],
         ),
-        body: const TabBarView(children: [TicketDetails(), HistoryTab()]),
+        body: const TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            children: [TicketDetails(), HistoryTab()]),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: 0,
           type: BottomNavigationBarType.fixed,
